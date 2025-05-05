@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar with Scroll Animation</title>
+    <link href="style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+        <div style="background-color: blue;">
+      <a href="#" class="logo">
+        <img src="/api/placeholder/120/40" alt="Logo" />
+        <i class="fas fa-bars" id="menu-icon"></i>
+      </a>
+
+      
+
+      <nav class="navbar">
+        <a href="#" class="active">OVERVIEW</a>
+
+          <div class="dropdown">
+          <a href class="dropbtn">OUR PROJECTS 
+            <text class="fa fa-caret-down" style="font-size: 7px;margin-top: -100px;"></text>
+          </a>
+          <div class="dropdown-content">
+            <a href="#"><img src="swarnim_logo_tag.svg">SWARNIM</a>
+            <a href="#"><img src="swarnim_logo_tag.svg">SWARNIM 35</a>
+           
+          </div>
+          </div>
+        
+        <a href="#">LOCATION</a>
+        <a href="#">AMENETIES</a>
+        <a href="#">FLOOR PLANS</a>
+        <a href="#">DOWNLOAD BROCHURE</a>
+        <button class="btn">ENQUIRE NOW</button>
+      </nav>
+    </div>
+    </header>
+
+    <section class="hero-section">
+      <video autoplay muted loop id="myVideo">
+        <source src="deskvideo.mp4" type="video/mp4" />
+      </video>
+    </section>
+
+    <script>
+      // Variables for navbar auto-hide functionality
+      let navbarTimeout;
+      const header = document.querySelector(".header");
+
+      // Sticky Navbar with auto-hide and reappear
+      window.addEventListener("scroll", function () {
+        // Add sticky class when scrolled down
+        header.classList.toggle("sticky", window.scrollY > 50);
+
+        // Only implement auto-hide behavior if we've scrolled down a bit
+        if (window.scrollY > 100) {
+          // Hide the navbar
+          header.classList.add("hide");
+
+          // Clear any existing timeout
+          clearTimeout(navbarTimeout);
+
+          // Set timeout to show navbar again after 50 milliseconds
+          navbarTimeout = setTimeout(() => {
+            header.classList.remove("hide");
+          }, 50);
+        }
+      });
+
+      // Mobile Menu Toggle
+      const menuIcon = document.querySelector("#menu-icon");
+      const navbar = document.querySelector(".navbar");
+
+      menuIcon.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!menuIcon.contains(e.target) && !navbar.contains(e.target)) {
+          navbar.classList.remove("active");
+        }
+      });
+
+      // Close mobile menu when clicking a nav link
+      document.querySelectorAll(".navbar a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navbar.classList.remove("active");
+        });
+      });
+
+      // Active link highlighting
+      const navLinks = document.querySelectorAll(".navbar a");
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.forEach((item) => item.classList.remove("active"));
+          link.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
