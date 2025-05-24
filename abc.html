@@ -16,44 +16,42 @@
   </head>
   <body>
     <header class="header">
-        <div style="background-color: blue;">
       <a href="#" class="logo">
         <img src="/api/placeholder/120/40" alt="Logo" />
         <i class="fas fa-bars" id="menu-icon"></i>
       </a>
-
-      
-
       <nav class="navbar">
         <a href="#" class="active">OVERVIEW</a>
-
-          <div class="dropdown">
-          <a href class="dropbtn">OUR PROJECTS 
-            <text class="fa fa-caret-down" style="font-size: 7px;margin-top: -100px;"></text>
+        <div class="dropdown">
+          <a href class="dropbtn"
+            >OUR PROJECTS
+            <text
+              class="fa fa-caret-down"
+              style="font-size: 7px; margin-top: -100px"
+            ></text>
           </a>
           <div class="dropdown-content">
-            <a href="#"><img src="swarnim_logo_tag.svg">SWARNIM</a>
-            <a href="#"><img src="swarnim_logo_tag.svg">SWARNIM 35</a>
-           
+            <a href="#"><img src="swarnim_logo_tag.svg" />SWARNIM</a>
+            <a href="#"><img src="swarnim_logo_tag.svg" />SWARNIM 35</a>
           </div>
-          </div>
-        
+        </div>
+
         <a href="#">LOCATION</a>
         <a href="#">AMENETIES</a>
         <a href="#">FLOOR PLANS</a>
         <a href="#">DOWNLOAD BROCHURE</a>
         <button class="btn">ENQUIRE NOW</button>
       </nav>
-    </div>
     </header>
 
     <section class="hero-section">
       <video autoplay muted loop id="myVideo">
         <source src="deskvideo.mp4" type="video/mp4" />
       </video>
+      <h1 class="watermar">Swarnim - A project by Tathastu </h1>
     </section>
 
-    <script>
+    <!-- <script>
       // Variables for navbar auto-hide functionality
       let navbarTimeout;
       const header = document.querySelector(".header");
@@ -64,7 +62,7 @@
         header.classList.toggle("sticky", window.scrollY > 50);
 
         // Only implement auto-hide behavior if we've scrolled down a bit
-        if (window.scrollY > 100) {
+        if (window.scrollY > 50) {
           // Hide the navbar
           header.classList.add("hide");
 
@@ -109,6 +107,6 @@
           link.classList.add("active");
         });
       });
-    </script>
+    </script> -->
   </body>
 </html>
