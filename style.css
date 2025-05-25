@@ -116,7 +116,7 @@ color: rgb(255, 255, 255);
     border: none;
     
   }
-  
+
   .dropdown-content {
     display: none;
     position: absolute;
@@ -139,7 +139,6 @@ color: rgb(255, 255, 255);
   
   .dropdown:hover .dropdown-content {display: block;}
   
-  /* .dropdown:hover .dropbtn {background-color: gray;} */
   img{
     width: 20px;
     display: inline-block;
