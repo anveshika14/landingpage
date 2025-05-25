@@ -112,11 +112,11 @@ color: rgb(255, 255, 255);
     background: transparent;
     color: white;
     font-family: Montserrat;
-    /* padding: 16px; */
     font-size: 12px;
     border: none;
     
   }
+  
   .dropdown-content {
     display: none;
     position: absolute;
